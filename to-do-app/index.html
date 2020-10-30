@@ -13,8 +13,8 @@
 
     <h3>input parts</h3>
     <form method="GET" action="input.html" v-on:submit.prevent>
-      <input type="text">
-      <input type="submit" value="add">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="add" v-on:click="addItem">
     </form>
 
     <br><br>
