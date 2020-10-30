@@ -14,7 +14,7 @@
     <h3>Form parts</h3>
     <form v-on:submit.prevent method="GET" action="index.html">
       <input v-model="newItem" type="text">
-      <button v-on:click="addItem">追加</button>
+      <input v-on:click="addItem" type="submit">
     </form>
     <br>
 
@@ -22,10 +22,10 @@
     <h3>Lists parts</h3>
     <ul>
       <li v-for="(todo, index) in todos">
-        <input type="checkbox">
-        <span v-bind:class="{ done: todo.isDone }">
-          {{ todo.item }}
-        </span>
+        <input v-model="todo.isDone" type="checkbox">
+          <span v-bind:class="{ done: todo.isDone }">
+            {{ todo.item }}
+          </span>
         <button v-on:click="deleteItem(index)">Delete</button>
       </li>
     </ul>
