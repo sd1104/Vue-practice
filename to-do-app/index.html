@@ -12,9 +12,9 @@
     <h2>To Do Lists</h2>
 
     <h3>Form parts</h3>
-    <form method="GET" action="index.html">
-      <input type="text">
-      <input type="submit">
+    <form v-on:submit.prevent method="GET" action="index.html">
+      <input v-model="newItem" type="text">
+      <button v-on:click="addItem">追加</button>
     </form>
     <br>
 
@@ -23,7 +23,7 @@
     <ul>
       <li>
         <input type="checkbox">
-          input Lists
+          {{ todos.item }}
         <button>Delete</button>
       </li>
     </ul>
