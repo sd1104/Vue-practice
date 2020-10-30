@@ -8,7 +8,6 @@
 </head>
 <body>
   <div id="app">
-
     <h2>To Do Lists</h2>
 
     <h3>Form parts</h3>
@@ -18,27 +17,29 @@
     </form>
     <br>
 
-
     <h3>Lists parts</h3>
     <ul>
-      <li v-for="(todo, index) in todos">
+      <li v-for="(todo, t) in todos">
         <input v-model="todo.isDone" type="checkbox">
-          <span v-bind:class="{ done: todo.isDone }">
-            {{ todo.item }}
-          </span>
+        <span v-bind:class="{ done: todo.isDone }">
+          {{ t }}：{{ todo }}
+        </span>
+        <br>
+        <input v-model="todo.isDone" type="checkbox">
+        <span v-for="(v, i) in todo">
+          {{ i }}：{{ v }}
+        </span>
         <button v-on:click="deleteItem(index)">Delete</button>
       </li>
     </ul>
     <br><br>
 
-
     <h3>格納データ</h3>
     <pre>
       {{ $data }}
     </pre>
-
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
