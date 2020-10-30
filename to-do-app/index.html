@@ -16,6 +16,18 @@
       <input type="text" v-model="newItem">
       <input type="submit" value="add" v-on:click="addItem">
     </form>
+    <br>
+
+    <h3>list parts</h3>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span v-bind:class="{ done: todo.isDone}">
+          {{ todo.item }}
+        </span>
+        <button v-on:click="deleteItem(index)">Delete</button>
+      </li>
+    </ul>
 
     <br><br>
     <pre>
