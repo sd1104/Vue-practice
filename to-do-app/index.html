@@ -21,10 +21,12 @@
 
     <h3>Lists parts</h3>
     <ul>
-      <li>
+      <li v-for="(todo, index) in todos">
         <input type="checkbox">
-          {{ todos.item }}
-        <button>Delete</button>
+        <span v-bind:class="{ done: todo.isDone }">
+          {{ todo.item }}
+        </span>
+        <button >Delete</button>
       </li>
     </ul>
     <br><br>
