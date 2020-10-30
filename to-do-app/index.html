@@ -9,7 +9,13 @@
 <body>
   <div id="app">
 
-    {{ message }}
+    <h2>TODOLISTs</h2>
+
+    <h3>input parts</h3>
+    <form method="GET" action="input.html" v-on:submit.prevent>
+      <input type="text">
+      <input type="submit" value="add">
+    </form>
 
     <br><br>
     <pre>
