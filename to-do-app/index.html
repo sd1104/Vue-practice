@@ -8,7 +8,20 @@
 </head>
 <body>
   <div id="app">
-    {{ message }}
+    <h2>to do list</h2>
+
+    <h3>入力フォーム</h3>
+    <div class="box">
+      <form method="POST" action="index.html" v-on:submit.prevent>
+        <input type="text" v-model="newItem">
+        <input type="submit" v-on:click="addItem">
+      </form>
+    </div>
+
+    <h3>データ内容確認</h3>
+    <pre>
+      {{ $data }}
+    </pre>
   </div>
 
 
