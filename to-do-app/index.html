@@ -8,7 +8,16 @@
 <body>
 
   <div id="app">
-    {{ message }}
+    <h2>bit coinpractice</h2>
+
+    <section v-if="hasError">
+      Error appeared
+    </section>
+
+    <section v-else="hasError">
+
+    </section>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
