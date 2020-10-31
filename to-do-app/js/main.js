@@ -4,7 +4,7 @@ new Vue({
   el: '#app',
   data: {
     bpi: null,
-    haserror: false,
+    hasError: false,
     loading: true
   },
   mounted: function() {
@@ -13,5 +13,19 @@ new Vue({
     .then(function(response) {
       this.bpi = response.data.bpi
     }.bind(this))
+
+    .catch(function(error) {
+      console.log(error)
+      this.hasError = true
+    }.bind(this))
+
+    .finally(function() {
+      this.loading = false
+    }.bind(this))
+  },
+  fileters: {
+    currencyDecimal(value) {
+      return value.toFixed(2)
+    }
   }
 })
