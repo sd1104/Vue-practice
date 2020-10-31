@@ -23,9 +23,4 @@ new Vue({
       this.loading = false
     }.bind(this))
   },
-  fileters: {
-    currencyDecimal(value) {
-      return value.toFixed(2)
-    }
-  }
 })
