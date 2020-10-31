@@ -15,7 +15,16 @@
     </section>
 
     <section v-else="hasError">
-
+      <div v-if="loading">
+        Loading
+      </div>
+      <div>
+        <ul v-cloak>
+          <li v-for="(rate, currency) in bpi">
+            {{ currency }}:{{ rate.rate_float | currencyDecimal }}
+          </li>
+        </ul>
+      </div>
     </section>
 
   </div>
