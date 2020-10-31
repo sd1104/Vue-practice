@@ -1,4 +1,3 @@
-import Axios from 'axios'
 
 new Vue({
   el: '#app',
@@ -8,7 +7,8 @@ new Vue({
     loading: true
   },
   mounted: function() {
-    Axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    axios
+    .get('https://api.coindesk.com/v1/bpi/currentprice.json')
 
     .then(function(response) {
       this.bpi = response.data.bpi
