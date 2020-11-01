@@ -6,7 +6,7 @@ new Vue ({
   },
   methods: {
     addItem: function() {
-      if(newItem === '') return;
+      if(this.newItem === '') return;
       let todo = {
         item: this.newItem,
         isDone: false
