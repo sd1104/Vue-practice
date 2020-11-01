@@ -12,7 +12,7 @@
 
     <section>
       <h3>input form</h3>
-      <form method="GET" action="index.php" v-on:submit.prevent>
+      <form method="GET" action="index.html" v-on:submit.prevent>
         <input type="text" v-model="newItem">
         <input type="submit" name="btn_submit" value="submit" v-on:click="addItem">
       </form>
@@ -20,7 +20,17 @@
 
     <section>
       <h3>lists</h3>
-
+      <div>
+        <ul>
+          <li>
+            <input type="checkbox">
+            <span>
+              {{ todo.item }}
+            </span>
+            <button v-on:click="deleteItem(index)"></button>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section>
