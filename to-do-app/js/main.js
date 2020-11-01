@@ -18,6 +18,8 @@ new Vue({
       this.haserror = true
     }.bind(this))
 
-
+    .finally(function(){
+      this.loading  = false
+    }.bind(this))
   }
 })
