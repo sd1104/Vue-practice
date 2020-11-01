@@ -1,10 +1,10 @@
 new Vue ({
   el: '#app',
   data: {
-    newItem: '',
+    newItem: "",
     todos: []
   },
-  method: {
+  methods: {
     addItem: function() {
       if(newItem === '') return;
       let todo = {
