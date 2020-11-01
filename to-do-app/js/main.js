@@ -11,7 +11,7 @@ new Vue ({
         item: this.newItem,
         isDone: false
       }
-      todos.push(todo)
+      this.todos.push(todo)
     },
     deleteItem(index) {
       this.todos.splice(index, 1)
