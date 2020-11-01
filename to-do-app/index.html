@@ -7,7 +7,25 @@
 </head>
 <body>
   <div id="app">
-    {{ message }}
+    <section>
+      <h2>bitboin price index</h2>
+      <div v-if="haserror">
+        Error
+      </div>
+
+      <div v-if="loading">
+        loading...
+      </div>
+
+      <div>
+        <ul v-cloak>
+          <li v-for="(rate, currency) in bpi">
+            {{ currency }}; {{ rate.rate_float }}
+          </li>
+        </ul>
+      </div>
+
+    </section>
 
 
     <section>
