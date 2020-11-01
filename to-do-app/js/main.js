@@ -1,6 +1,8 @@
 new Vue({
   el: '#app',
   data: {
-    message: 'hello'
+    bpi: null,
+    haserror: false,
+    loading: true,
   }
 })
