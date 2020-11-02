@@ -4,5 +4,16 @@ const todo = new Vue({
     newItem: '',
     todos: []
   },
+  methods: {
+    addItem: function() {
+      if(this.newItem === '') return;
+      todo = {
+        item: this.newItem,
+        isDone: false
+      }
+      this.todos.push(todo);
+      this.newItem = ''
+    },
 
+  }
 })
