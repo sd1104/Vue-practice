@@ -14,18 +14,29 @@
       <h2>todo Lists</h2>
       <br>
 
-      <h3>input prarts</h3>
+      <h3>input parts</h3>
       <form v-on:submit.prevent id="form1" method="POST" action="index.html">
         <input type="text" name="newItem" v-model="newItem">
         <input type="submit" name="confirm_btn" value="confirm" v-on:click="addItem">
       </form>
-
       <br>
 
 
+      <h3>list parts</h3>
+        <ul>
+          <li v-for="(todo, index) in todos">
+            <input type="checkbox">
+            <span v-bind:class="{ done: todo.isDone}">
+              {{ todo.item }}
+            </span>
+            <button v-on:click="deleteItem(index)">Delete</button>
+          </li>
+        </ul>
+      <br>
+
       <br><br>
       <pre>
-
+        {{ $data }}
       </pre>
     </div>
 
