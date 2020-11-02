@@ -21,7 +21,11 @@
         </div>
 
         <h2>bitcoin price index</h2>
-
+        <ul v-cloak>
+          <li v-for="(rate, currency) in bpi">
+            {{ currency }}:{{ rate.rate_float | currencydecimal}}
+          </li>
+        </ul>
 
       </div>
 
