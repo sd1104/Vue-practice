@@ -11,7 +11,16 @@
   <section>
     <div id="app">
 
+      <h2>todo Lists</h2>
+      <br>
 
+      <h3>input prarts</h3>
+      <form v-on:submit.prevent id="form1" method="POST" action="index.html">
+        <input type="text" name="newItem" v-model="newItem">
+        <input type="submit" name="confirm_btn" value="confirm" v-on:click="addItem">
+      </form>
+
+      <br>
 
 
       <br><br>
