@@ -9,8 +9,23 @@
 
   <div id="app">
 
-    <div>
+    <div v-if="loading">
+      loading....
+    </div>
 
+    <div>
+      <h2>bpi practice</h2>
+      <div v-if="error">
+        Somethings Error happens and check out what happens from your console.
+      </div>
+
+      <div>
+        <ul v-cloak>
+          <li v-for="(rate, currency) in bpi">
+            {{ currency }}:{{ rate.rate_float | currencyDecimal }}
+          </li>
+        </ul>
+      </div>
     </div>
 
     <pre>
