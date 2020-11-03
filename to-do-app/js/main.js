@@ -1,6 +1,30 @@
 const bpi = new Vue({
   el: '#app',
   data: {
-    message: 'hello vue.js'
+    bpi: null,
+    error: false,
+    loading: true
+  },
+  mounted: function(){
+    axios
+    .get  ('https://api.coindesk.com/v1/bpi/currentprice.json')
+
+    .then(function(response) {
+      this.bipi = response.data.bpi
+    }.bind(this))
+
+    .catch(function(error){
+      console.log(error)
+      this.error = true
+    }.bind(this))
+
+    .finally(function(){
+      this.loading = true
+    }.bind(this))
+  },
+  filters: {
+    currencyDecimal(value) {
+      return value.toFixed(2)
+    }
   }
 })
