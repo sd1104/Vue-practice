@@ -10,7 +10,7 @@ const bpi = new Vue({
     .get  ('https://api.coindesk.com/v1/bpi/currentprice.json')
 
     .then(function(response) {
-      this.bipi = response.data.bpi
+      this.bpi = response.data.bpi
     }.bind(this))
 
     .catch(function(error){
@@ -19,7 +19,7 @@ const bpi = new Vue({
     }.bind(this))
 
     .finally(function(){
-      this.loading = true
+      this.loading = false
     }.bind(this))
   },
   filters: {
