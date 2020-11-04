@@ -3,29 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
   <title>bpi practice</title>
 </head>
 <body>
 
-  <div id="app">
-
-    <div v-if="loading">
-      loading....
-    </div>
-
+  <div class="app">
     <div>
-      <h2>bpi practice</h2>
-      <div v-if="error">
-        Somethings Error happens and check out what happens from your console.
-      </div>
 
-      <div>
-        <ul v-cloak>
-          <li v-for="(rate, currency) in bpi">
-            {{ currency }}:{{ rate.rate_float | currencyDecimal }}
-          </li>
-        </ul>
-      </div>
+      {{ message }}
+
+
     </div>
 
     <pre>
@@ -33,9 +21,9 @@
     </pre>
 
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/main.js"></script>
-
 </body>
 </html>
