@@ -21,6 +21,10 @@ new Vue({
     .finally(function(){
       this.loading = false;
     }.bind(this))
-
+  },
+  filters: {
+    currencyDecimal(value) {
+      return value.toFixed(2);
+    }
   }
 })
