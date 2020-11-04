@@ -4,5 +4,15 @@ new Vue({
     newItem: '',
     todos: []
   },
-
+  methods: {
+    newItem: function() {
+      if(this.newItem === '') return;
+      todo = {
+        item: this.newItem,
+        isDone: false
+      }
+      this.todos.push(todo);
+      this.newItem = '';
+    }
+  }
 })
