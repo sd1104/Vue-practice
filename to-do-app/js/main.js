@@ -18,6 +18,9 @@ new Vue({
       this.error = true;
     })
 
+    .finally(function(){
+      this.loading = false;
+    })
 
   }
 })
