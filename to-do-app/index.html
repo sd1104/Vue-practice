@@ -10,14 +10,29 @@
 
   <div id="app">
     <h2>to do lists</h2>
-    <h3>input</h3>
-    <div>
-      <form method="POST" action="index.html" v-on:submit.prevent>
-        <input type="text" v-model="newItem">
-        <input type="submit" value="submit" v-on:click="addItem">
-      </form>
-    </div>
 
+    <section>
+      <h3>input</h3>
+      <div>
+        <form method="POST" action="index.html" v-on:submit.prevent>
+          <input type="text" v-model="newItem">
+          <input type="submit" value="submit" v-on:click="addItem">
+        </form>
+      </div>
+     </section>
+
+    <section>
+      <h3>list</h3>
+      <div>
+        <ul>
+          <li v-for="(todo, index) in todos">
+            <input type="checkbox" v-model="todo.isDone">
+            {{ todo.item }}
+            <button v-on:click="deleteItem">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <pre>
       {{$data}}
