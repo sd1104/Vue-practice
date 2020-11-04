@@ -9,7 +9,19 @@
 <body>
 
   <div id="app">
-    {{message}}
+    <h2>to do lists</h2>
+    <h3>input</h3>
+    <div>
+      <form method="POST" action="index.html" v-on:submit.prevent>
+        <input type="text" v-model="newItem">
+        <input type="submit" value="submit" v-on:click="addItem">
+      </form>
+    </div>
+
+
+    <pre>
+      {{$data}}
+    </pre>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
