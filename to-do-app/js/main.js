@@ -5,7 +5,7 @@ new Vue({
     todos: []
   },
   methods: {
-    newItem: function() {
+    addItem: function() {
       if(this.newItem === '') return;
       todo = {
         item: this.newItem,
@@ -14,7 +14,7 @@ new Vue({
       this.todos.push(todo);
       this.newItem = '';
     },
-    addItem: function(index) {
+    deleteItem: function(index) {
       this.todos.splice(index, 1)
     }
   }
