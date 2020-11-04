@@ -13,6 +13,9 @@ new Vue({
       }
       this.todos.push(todo);
       this.newItem = '';
+    },
+    addItem: function(index) {
+      this.todos.splice(index, 1)
     }
   }
 })
