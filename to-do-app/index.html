@@ -19,6 +19,12 @@
     <section>
       <h2>bit coin price index</h2>
       <div>
+        <div v-if="error">
+          <p>Error has happened. Please check the console!</p>
+        </div>
+      </div>
+
+      <div>
         <ul v-cloak>
           <li v-for="(rate, currency) in bpi">
             {{ currency }}:{{ rate.rate_float | currencyDecimal }}
