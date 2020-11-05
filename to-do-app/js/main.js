@@ -21,5 +21,10 @@ const bpi = new Vue({
     .finally( function() {
       this.loading = false
     }.bind(this))
+  },
+  filters: {
+    currencyDecimal: function(value) {
+      return value.toFixed(2);
+    }
   }
 })
