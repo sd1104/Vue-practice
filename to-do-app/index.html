@@ -13,12 +13,21 @@
       <h2>ToDo Lists Practice</h2>
       <h3>Input Parts</h3>
         <form method="POST" action="index.html" v-on:submit.prevent>
-          <input type="text" v-model="newItem">
+          <input type="text" v-on:click="addItem">
           <input type="submit">
         </form>
       <br>
 
-      <h3></h3>
+      <h3>Lists Parts</h3>
+      <div>
+        <ul>
+          <li v-for="(todo, index) in todos">
+            <input type="checkbox" v-model="(todo.isDone)">
+            <span v-bind:class="{ done: todo.isDone }"> {{ todo.item }} </span>
+            <bottun v-on:click="DeleteItem">Delete</bottun>
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
 
