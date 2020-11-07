@@ -11,6 +11,12 @@
   <section>
     <div id="app">
       <section>
+        <div v-if="loading">
+          <p>Loading....</p>
+        </div>
+      </section>
+
+      <section>
         <h2>bit coin price index</h2>
         <p v-if="error">
           Error has happended. Check the console.
