@@ -12,6 +12,9 @@
     <div id="app">
       <section>
         <h2>bit coin price index</h2>
+        <p v-if="error">
+          Error has happended. Check the console.
+        </p>
         <div>
           <ul>
             <li v-for="(rate, currency) in bpi">
