@@ -1,8 +1,8 @@
 const todo = new Vue({
   el: '#app',
   data: {
-    bpi = null,
-    errro: false,
+    bpi: null,
+    error: false,
     loading: true
   },
   mounted() {
@@ -10,17 +10,20 @@ const todo = new Vue({
     .get('https://api.coindesk.com/v1/bpi/currentprice.json')
 
     .then(function(response){
-      this.bpi = response.data.bpi
-    })
+      console.log('through .then');
+      this.bpi = response.data.bpi;
+      console.log(this.bpi);
+    }.bind(this))
 
     .catch(function(error){
-      console.log('trough .then')
+      console.log('trough .catch');
       console.log(error);
-      this.error = true
-    })
+      this.error = true;
+    }.bind(this))
 
     .finally(function(){
-      this.loading = false
-    })
+      console.log('finally')
+      this.loading = false;
+    }.bind(this))
   }
 })
