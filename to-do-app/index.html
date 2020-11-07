@@ -11,7 +11,14 @@
   <section>
     <div id="app">
       <section>
-        {{ message}}
+        <h2>bit coin price index</h2>
+        <div>
+          <ul>
+            <li v-for="(rate, currency) in bpi">
+              {{ currency }}:{{rate}}
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section>
