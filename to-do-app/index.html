@@ -21,7 +21,7 @@
           <div>
             <ul>
               <li v-for="(rate, currency) in bpi">
-                {{ currency }}:{{rate}}
+                {{ currency }}:{{rate.rate_float | fixed_two }}
               </li>
             </ul>
           </div>
