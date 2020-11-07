@@ -10,25 +10,23 @@
 
   <section>
     <div id="app">
-      <section>
         <div v-if="loading">
           <p>Loading....</p>
         </div>
-      </section>
-
-      <section>
-        <h2>bit coin price index</h2>
-        <p v-if="error">
-          Error has happended. Check the console.
-        </p>
-        <div>
-          <ul>
-            <li v-for="(rate, currency) in bpi">
-              {{ currency }}:{{rate}}
-            </li>
-          </ul>
+        <div v-else>
+          <h2>bit coin price index</h2>
+          <p v-if="error">
+            Error has happended. Check the console.
+          </p>
+          <div>
+            <ul>
+              <li v-for="(rate, currency) in bpi">
+                {{ currency }}:{{rate}}
+              </li>
+            </ul>
+          </div>
         </div>
-      </section>
+
 
       <section>
         <pre>
