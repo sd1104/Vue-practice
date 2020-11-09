@@ -1,6 +1,12 @@
 new Vue({
   el: '#app',
   data: {
-    message: 'hello Vue.js'
+    newItem: '',
+    todos: []
+  },
+  methods: {
+    addItem: function() {
+      if(newItem == '') return;
+    }
   }
 })
