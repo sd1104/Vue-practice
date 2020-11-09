@@ -8,24 +8,15 @@
 </head>
 <body>
   <div id="app">
-    <h2>to do list</h2>
-
-    <h3>input part</h3>
-    <form v-on:submit.prevent method="POST" action="index.html">
-      <input type="text" v-model="newItem">
-      <input type="submit" v-on:click="addItem">
-    </form>
-
-    <h3>list part</h3>
-    <ul>
-      <li v-for="(todo, index) in todos">
-        <input type="checkbox" v-model="todo.isDone">
-        <span v-bind:class="{ done: todo.isDone }">
-          {{ todo.item }}
-        </span>
-        <button v-on:click="deleteItem">delete</button>
-      </li>
-    </ul>
+    <h2>bpi practice</h2>
+    <div v-if="loading">
+      Loading...
+    </div>
+    <div v-else>
+      <div v-if="error">
+        error happned
+      </div>
+    </div>
 
     <pre>
       {{ $data }}
