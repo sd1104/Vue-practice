@@ -4,42 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
-  <title>To do List</title>
+  <title>Document</title>
 </head>
 <body>
+  <div id="app">
+    {{ message }}
 
-  <section>
-    <div id="app">
-        <div v-if="loading">
-          <p>Loading....</p>
-        </div>
-        <div v-else>
-          <h2>bit coin price index</h2>
-          <p v-if="error">
-            Error has happended. Check the console.
-          </p>
-          <div>
-            <ul>
-              <li v-for="(rate, currency) in bpi">
-                {{ currency }}:{{rate.rate_float | fixed_two }}
-              </li>
-            </ul>
-          </div>
-        </div>
+    <pre>
+      {{ $data }}
+    </pre>
+  </div>
 
-
-      <section>
-        <pre>
-          {{ $data }}
-        </pre>
-      </section>
-    </div>
-  </section>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
