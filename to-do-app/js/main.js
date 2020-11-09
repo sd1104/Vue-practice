@@ -6,16 +6,16 @@ new Vue({
   },
   methods: {
     addItem: function() {
-      if(newItem == '') return;
+      if(this.newItem == '') return;
       todo = {
-        item = this.newItem,
-        isDone = false
+        item: this.newItem,
+        isDone: false
       }
       this.todos.push(todo);
       this.newItem = '';
     },
     deleteItem: function(index) {
-      todos.splice(index, 1)
+      this.todos.splice(index, 1)
     }
   }
 })
