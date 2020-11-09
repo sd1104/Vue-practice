@@ -1,21 +1,16 @@
 new Vue({
   el: '#app',
   data: {
-    newItem: '',
-    todos: []
+    bpi: null,
+    error: false,
+    loading: true
   },
-  methods: {
-    addItem: function() {
-      if(this.newItem == '') return;
-      todo = {
-        item: this.newItem,
-        isDone: false
-      }
-      this.todos.push(todo);
-      this.newItem = '';
-    },
-    deleteItem: function(index) {
-      this.todos.splice(index, 1)
-    }
+  mounted() {
+    axios
+    .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+
+    .then(function(response){
+      this.bpi = response.data.bpi;
+    })
   }
 })
