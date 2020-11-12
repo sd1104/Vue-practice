@@ -19,7 +19,7 @@ new Vue({
     }.bind(this))
 
     .finally(function() {
-      this.loading = true;
+      this.loading = false;
     }.bind(this))
   },
   filters: {
