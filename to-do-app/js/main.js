@@ -21,6 +21,10 @@ new Vue({
     .finally(function() {
       this.loading = true;
     }.bind(this))
-
+  },
+  filters: {
+    fixed(value) {
+      return value.toFixed(2);
+    }
   }
 })
