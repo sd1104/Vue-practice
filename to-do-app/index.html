@@ -11,7 +11,12 @@
   <div id="app">
 
     <div>
-      {{ message }}
+      <h2>To do List</h2>
+      <h3>input form</h3>
+      <div>
+        <input type="text" v-model="newItem">
+        <input type="submit" v-on:click="addItem">
+      </div>
     </div>
 
     <pre>
