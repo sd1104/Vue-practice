@@ -13,7 +13,13 @@
       Loading...
     </div>
     <div v-else>
-
+      <div>
+        <ul v-cloak>
+          <li v-for="(rate, currency) in bpi">
+            {{ currency }}:{{ rate.rate_float | fixed }}
+          </li>
+        </ul>
+      </div>
 
 
     </div>
