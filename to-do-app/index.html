@@ -14,27 +14,30 @@
       <h2>To do List</h2>
       <h3>input form</h3>
       <div>
-        <input type="text" v-model="newItem">
-        <input type="submit" v-on:click="addItem">
+        <form v-on:submit.prevent method="POST" action="index.php">
+          <input type="text" v-model="newItem">
+          <input type="submit" v-on:click="addItem">
+        </form>
       </div>
 
       <h3>list part</h3>
-      <div>
+
         <ul>
-          <liv v-for="(todo, index) in todos">
+          <li v-for="(todo, index) in todos">
             <input type="checkbox" v-model="todo.isDone">
-            <span v-bind:class="{ done:todo.isDone }">
+            <span v-bind:class="{ done: todo.isDone }">
               {{ todo.item }}
             <button v-on:click="deleteItem(index)">Delete</button>
             </span>
           </li>
         </ul>
-      </div>
+
     </div>
 
     <pre>
-      {{ data }}
+      {{ $data }}
     </pre>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
