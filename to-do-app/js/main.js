@@ -16,8 +16,11 @@ new Vue({
     .catch(function(error){
       this.error = false;
       console.log(error);
-    })
+    }.bind(this))
 
+    .finally(function() {
+      this.loading = true;
+    }.bind(this))
 
   }
 })
