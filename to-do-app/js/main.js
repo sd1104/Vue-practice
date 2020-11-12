@@ -9,7 +9,7 @@ new Vue({
       if(this.newItem === '') return;
       todo = {
         item: this.newItem,
-        isDone: false,¥
+        isDone: false,
       }
       this.todos.push(todo);
       this.newItem = '';
