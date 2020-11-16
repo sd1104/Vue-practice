@@ -8,7 +8,20 @@
 </head>
 <body>
   <div id="app">
-
+    <h2>bpi list</h2>
+    <div v-if="loading">
+      loading....
+    </div>
+    <div v-else>
+      <div v-if="error">
+        <p>error happend. check console</p>
+      </div>
+      <ul v-cloak>
+        <li v-for="(rate, currency) in bpi">
+          {{ currency }}:{{ rate.rate_float | fixed }}
+        </li>
+      </ul>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
