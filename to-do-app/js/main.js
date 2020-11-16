@@ -1,11 +1,11 @@
 new Vue({
   el: '#app',
   data: {
-    bpi = null,
-    error = false,
-    loading = true,
+    bpi: null,
+    error: false,
+    loading: true
   },
-  mounted: function(){
+  mounted() {
     axios
     .get('https://api.coindesk.com/v1/bpi/currentprice.json')
 
@@ -19,7 +19,7 @@ new Vue({
     }.bind(this))
 
     .finally(function() {
-      this.loading = true;
+      this.loading = false;
     }.bind(this))
   },
   filters: {
