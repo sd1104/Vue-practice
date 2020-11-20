@@ -3,5 +3,14 @@ new Vue({
   data: {
     newData: '',
     todos: []
+  },
+  methods: {
+    addItem: function() {
+      if(this.newItem === '') return;
+      todo = {
+        item: this.newItem,
+        isDone: false
+      }
+    }
   }
 })
