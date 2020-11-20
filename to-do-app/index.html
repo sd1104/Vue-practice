@@ -17,6 +17,13 @@
         <div v-if="error">
           <p>error happnes</p>
         </div>
+        <div>
+          <ul v-cloadk>
+            <li v-for="(rate, currency) in bpi">
+              {{ currency }}:{{ rate.rate_float | fix }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
