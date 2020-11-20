@@ -8,7 +8,12 @@
 </head>
 <body>
   <div id="app">
-
+    <h2>to do List</h2>
+    <h3>input part</h3>
+    <form action="" v-on:submit.prevent>
+      <input type="text" v-model="newItem">
+      <input type="submit" value="submit" v-on:click="addItem">
+    </form>
 
   </div>
 
