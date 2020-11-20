@@ -17,5 +17,9 @@ new Vue({
       console.log(error);
       this.error = true;
     }.bind(this))
+
+    .finally(function() {
+      this.loading = false;
+    }.bind(this))
   }
 })
