@@ -11,6 +11,9 @@ new Vue({
         item: this.newItem,
         isDone: false
       }
+      this.todos.push(todo);
+      this.newItem = '';
+
     }
   }
 })
