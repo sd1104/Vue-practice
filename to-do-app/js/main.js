@@ -12,5 +12,10 @@ new Vue({
     .then(function(response) {
       this.bpi = response.data.bpi
     }.bind(this))
+
+    .catch(function(error) {
+      this.error = true;
+      console.log(error);
+    })
   }
 })
