@@ -1,9 +1,9 @@
 new Vue({
   el: '#app',
   data: {
-    bpi = null,
-    error = false,
-    loading = true
+    bpi: null,
+    error: false,
+    loading: true
   },
   mounted() {
     axios
@@ -16,6 +16,10 @@ new Vue({
     .catch(function(error) {
       this.error = true;
       console.log(error);
-    })
+    }.bind(this))
+
+    .finally(function() {
+      this.loading = false;
+    }.bind(this))
   }
 })
