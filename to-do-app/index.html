@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>To do list</title>
+</head>
+<body>
+  <div id="app">
+    <h2>To do List</h2>
+    <section>
+      <h3>list part</h3>
+      <form action="" v-on:submit.prevent>
+        <input type="text" v-model="newItem">
+        <input type="submit" v-on:click="addItem">
+      </form>
+    </section>
+
+  </div>
+</body>
+</html>
