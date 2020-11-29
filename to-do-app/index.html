@@ -11,9 +11,20 @@
     <h2>TO DO LIST</h2>
     <h3>input part</h3>
     <form action="" v-on:submit.prevent>
-
-
+      <input type="text" v-model="newItem">
+      <input type="submit" v-on:click="addItem">
     </form>
+
+    <h3>list part</h3>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span v-bind:class="{ done: todo.isDone }">
+          {{ todo.item }}
+        </span>
+        <button v-on:click="deleteItem">delete</button>
+      </li>
+    </ul>
 
 
 
